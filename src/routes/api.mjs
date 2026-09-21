@@ -98,3 +98,12 @@ router.get('/api/monitoringdata', async function (req, res, next) {
 })
 
 export default router
+
+
+// Health endpoint
+router.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    timestamp: new Date().toISOString()
+  })
+})
