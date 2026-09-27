@@ -1,0 +1,22 @@
+config:
+  target: "{{ $processEnvironment.TARGET_URL }}"
+
+  phases:
+    - duration: 60
+      arrivalRate: 2
+      rampTo: 10
+      name: Warm up
+
+    - duration: 180
+      arrivalRate: 10
+      rampTo: 50
+      name: Scale out test
+
+  http:
+    timeout: 10
+
+scenarios:
+  - name: Check application health
+    flow:
+      - get:
+          url: "/health"
