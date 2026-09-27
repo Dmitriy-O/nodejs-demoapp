@@ -130,3 +130,9 @@ variable "notification_email" {
   type        = string
   default     = ""
 }
+
+variable "enable_email_subscription" {
+  description = "Create an SNS email subscription when a real recipient is configured"
+  type        = bool
+  default     = false
+}

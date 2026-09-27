@@ -12,7 +12,7 @@ resource "aws_sns_topic" "scaling_events" {
 }
 
 resource "aws_sns_topic_subscription" "email" {
-  count = var.enable_notifications && trimspace(var.notification_email) != "" ? 1 : 0
+  count = var.enable_notifications && var.enable_email_subscription && trimspace(var.notification_email) != "" ? 1 : 0
 
   topic_arn = aws_sns_topic.scaling_events[0].arn
   protocol  = "email"

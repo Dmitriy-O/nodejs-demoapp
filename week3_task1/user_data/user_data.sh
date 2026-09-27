@@ -58,7 +58,7 @@ docker run -d \
   --publish "$HOST_PORT:3000" \
   "$IMAGE"
 
-for attempt in $(seq 1 12); do
+for attempt in $(seq 1 60); do
   if curl --fail --silent --show-error \
     "http://127.0.0.1:$HOST_PORT$HEALTH_PATH"; then
     echo
