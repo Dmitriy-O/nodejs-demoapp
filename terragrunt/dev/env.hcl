@@ -20,6 +20,9 @@ locals {
   default_instance_warmup        = 300
   requests_per_target_per_minute = 100
 
+  enable_notifications      = true
+  enable_email_subscription = false
+
   public_subnet_cidrs = {
     "us-east-1a" = "10.20.1.0/24"
     "us-east-1b" = "10.20.2.0/24"
