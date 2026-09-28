@@ -7,3 +7,6 @@
 crash.log
 crash.*.log
 /modules/**/.terraform.lock.hcl
+
+# Local Terragrunt states
+.state/
