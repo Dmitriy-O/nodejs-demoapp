@@ -1,0 +1,9 @@
+.terraform/
+.terragrunt-cache/
+.infracost/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+/modules/**/.terraform.lock.hcl
