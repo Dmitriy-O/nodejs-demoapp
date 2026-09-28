@@ -33,3 +33,15 @@ output "application_role_arn" {
 output "notification_topic_arn" {
   value = try(aws_sns_topic.scaling_events[0].arn, null)
 }
+
+output "documentdb_endpoint" {
+  value = try(aws_docdb_cluster.application[0].endpoint, null)
+}
+
+output "documentdb_cluster_identifier" {
+  value = try(aws_docdb_cluster.application[0].cluster_identifier, null)
+}
+
+output "documentdb_master_secret_arn" {
+  value = try(aws_docdb_cluster.application[0].master_user_secret[0].secret_arn, null)
+}

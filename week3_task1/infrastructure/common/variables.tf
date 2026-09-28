@@ -136,3 +136,27 @@ variable "enable_email_subscription" {
   type        = bool
   default     = false
 }
+
+variable "enable_documentdb" {
+  description = "Create a DocumentDB cluster for this environment"
+  type        = bool
+  default     = false
+}
+
+variable "connect_documentdb" {
+  description = "Reserved for future application connection wiring; currently unused"
+  type        = bool
+  default     = false
+}
+
+variable "documentdb_subnet_cidrs" {
+  description = "Private subnet CIDRs keyed by availability zone"
+  type        = map(string)
+  default     = {}
+}
+
+variable "documentdb_instance_class" {
+  description = "DocumentDB instance class"
+  type        = string
+  default     = "db.t3.medium"
+}

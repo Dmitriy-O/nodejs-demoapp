@@ -33,3 +33,13 @@ requests_per_target_per_minute = 100
 enable_deletion_protection = false
 enable_notifications       = true
 notification_email         = "dummy@mail.com"
+
+enable_documentdb  = false
+connect_documentdb = false
+
+documentdb_subnet_cidrs = {
+  "us-east-1a" = "10.20.101.0/24"
+  "us-east-1b" = "10.20.102.0/24"
+}
+
+documentdb_instance_class = "db.t3.medium"
